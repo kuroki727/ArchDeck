@@ -8,9 +8,9 @@ from PySide6.QtWidgets import (
 
 from archdeck.pages.overview import OverviewPage
 from archdeck.pages.packages import PackagesPage
-from archdeck.pages.placeholder import PlaceholderPage
 from archdeck.pages.process_page import ProcessPage
 from archdeck.pages.system_page import SystemPage
+from archdeck.pages.cleanup import CleanupPage
 
 
 class MainWindow(QMainWindow):
@@ -87,7 +87,7 @@ class MainWindow(QMainWindow):
             "Обновить список", "systemctl", ["--user", "list-units", "--type=service", "--state=running", "--no-legend", "--plain"],
             "Активных пользовательских служб не найдено."
         )
-        self.pages["Очистка"] = PlaceholderPage("Очистка", "Просмотр кэша pacman и осиротевших пакетов. Перед удалением ArchDeck будет показывать точный список и запрашивать подтверждение.")
+        self.pages["Очистка"] = CleanupPage()
         self.pages["Система"] = SystemPage()
         for _, name in routes:
             self.stack.addWidget(self.pages[name])
