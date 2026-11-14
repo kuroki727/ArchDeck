@@ -11,6 +11,7 @@ from archdeck.pages.packages import PackagesPage
 from archdeck.pages.process_page import ProcessPage
 from archdeck.pages.system_page import SystemPage
 from archdeck.pages.cleanup import CleanupPage
+from archdeck.pages.updates import UpdatesPage
 
 
 class MainWindow(QMainWindow):
@@ -77,10 +78,7 @@ class MainWindow(QMainWindow):
             lambda: self._navigate("Обновления"),
             lambda: self._navigate("Службы"),
         )
-        self.pages["Обновления"] = ProcessPage(
-            "Обновления", "Посмотреть доступные обновления из официальных репозиториев. Проверка не устанавливает пакеты.",
-            "Проверить сейчас", "checkupdates", [], "Система обновлена." 
-        )
+        self.pages["Обновления"] = UpdatesPage()
         self.pages["Пакеты"] = PackagesPage()
         self.pages["Службы"] = ProcessPage(
             "Службы пользователя", "Список активных пользовательских служб systemd. Команда только читает состояние.",

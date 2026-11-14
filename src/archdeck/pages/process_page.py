@@ -54,21 +54,9 @@ class ProcessPage(QWidget):
         self.action.setEnabled(True)
         raw = bytes(self.process.readAllStandardOutput()).decode(errors="replace").strip()
         error = bytes(self.process.readAllStandardError()).decode(errors="replace").strip()
-        if self.program == "checkupdates":
-            lines = [line for line in raw.splitlines() if line.strip()]
-            if exit_code == 2:
-                self.status.setText("Не удалось проверить обновления: проверьте подключение и базы pacman.")
-                self.listing.addItem(error or "checkupdates завершился с ошибкой.")
-            elif lines:
-                self.status.setText(f"Доступно обновлений: {len(lines)}")
-                self.listing.addItems(lines)
-            else:
-                self.status.setText("Обновлений не найдено.")
-                self.listing.addItem(self.empty_text)
-        else:
-            lines = [line.strip() for line in raw.splitlines() if line.strip()]
-            self.status.setText(f"Активных служб: {len(lines)}" if exit_code == 0 else "Не удалось получить список служб.")
-            self.listing.addItems(lines or [error or self.empty_text])
+        lines = [line.strip() for line in raw.splitlines() if line.strip()]
+        self.status.setText(f"Активных служб: {len(lines)}" if exit_code == 0 else "Не удалось получить список служб.")
+        self.listing.addItems(lines or [error or self.empty_text])
 
     def _error(self, _error) -> None:
         self.action.setEnabled(True)

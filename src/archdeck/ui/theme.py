@@ -27,6 +27,9 @@ QProgressBar { background: #262d38; border: 0; border-radius: 4px; height: 7px; 
 QProgressBar::chunk { background: #8ca9ff; border-radius: 4px; }
 QListWidget { background: transparent; border: 0; outline: 0; }
 QListWidget::item { color: #dfe4ed; padding: 9px 10px; border-bottom: 1px solid #252b35; }
+QTableWidget { background: transparent; alternate-background-color: #1b212b; color: #dfe4ed; border: 0; gridline-color: #2a313d; selection-background-color: #2b3a55; }
+QTableWidget::item { padding: 6px; }
+QHeaderView::section { background: #202630; color: #aab3c2; border: 0; border-bottom: 1px solid #323b49; padding: 8px; font-weight: 650; }
 QLabel#statusPill { background: #202b27; color: #9cdbb5; border-radius: 10px; padding: 6px 10px; font-size: 11px; font-weight: 700; }
 QLabel#footer { color: #6f7988; font-size: 10px; }
 """

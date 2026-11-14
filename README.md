@@ -14,7 +14,7 @@ The project-local `.venv` uses system site packages so it can use PySide6 instal
 ## Current screens
 
 - **Overview** — CPU, memory, root filesystem, and shortcuts.
-- **Updates** — checks available repository updates with `checkupdates` when requested.
+- **Updates** — checks official repository updates with `checkupdates` when available, or the local pacman database otherwise; checks AUR updates with `yay` when installed. Shows installed and available versions. Checks start only when requested.
 - **Services** — lists active user services when requested.
 - **Packages** — browse, search, and inspect installed packages.
 - **System** — read-only host, kernel, processor, memory, storage, and uptime details.
