@@ -10,6 +10,7 @@ from archdeck.pages.overview import OverviewPage
 from archdeck.pages.packages import PackagesPage
 from archdeck.pages.placeholder import PlaceholderPage
 from archdeck.pages.process_page import ProcessPage
+from archdeck.pages.system_page import SystemPage
 
 
 class MainWindow(QMainWindow):
@@ -87,7 +88,7 @@ class MainWindow(QMainWindow):
             "Активных пользовательских служб не найдено."
         )
         self.pages["Очистка"] = PlaceholderPage("Очистка", "Просмотр кэша pacman и осиротевших пакетов. Перед удалением ArchDeck будет показывать точный список и запрашивать подтверждение.")
-        self.pages["Система"] = PlaceholderPage("Система", "Подробности о ядре, графике, накопителях и сети добавим следующим этапом.")
+        self.pages["Система"] = SystemPage()
         for _, name in routes:
             self.stack.addWidget(self.pages[name])
         self.nav_group.button(0).setChecked(True)

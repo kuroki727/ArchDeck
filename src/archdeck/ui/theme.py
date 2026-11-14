@@ -13,6 +13,7 @@ QLabel#eyebrow { color: #8d9bb4; font-size: 11px; font-weight: 750; letter-spaci
 QLabel#pageTitle { color: #f4f6fb; font-size: 26px; font-weight: 750; }
 QLabel#cardTitle { color: #aab3c2; font-size: 12px; font-weight: 650; }
 QLabel#metric { color: #f4f6fb; font-size: 29px; font-weight: 750; }
+QLabel#systemValue { color: #f4f6fb; font-size: 16px; font-weight: 650; }
 QLabel#small { color: #8791a0; font-size: 11px; }
 QFrame#card, QFrame#panel { background: #171c24; border: 1px solid #272e39; border-radius: 14px; }
 QFrame#hero { background: #1c2432; border: 1px solid #2b3952; border-radius: 16px; }
