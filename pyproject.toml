@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "archdeck"
+version = "0.1.0"
+description = "A calm desktop control center for Arch Linux"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["PySide6>=6.7"]
+
+[project.scripts]
+archdeck = "archdeck.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

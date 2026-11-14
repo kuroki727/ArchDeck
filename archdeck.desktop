@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=ArchDeck
+Comment=Control center for Arch Linux
+Exec=/home/kuroki/Projects/archdeck/run.sh
+Icon=preferences-system
+Terminal=false
+Categories=System;Settings;
+StartupNotify=true
